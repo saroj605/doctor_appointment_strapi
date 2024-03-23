@@ -24,6 +24,12 @@
       "type": "media",
       "multiple": true,
       "required": true
+    },
+    "hospital": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hospital.hospital",
+      "inversedBy": "categories"
     }
   }
 }

@@ -801,6 +801,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     ICON: Attribute.Media & Attribute.Required;
+    hospital: Attribute.Relation<
+      'api::category.category',
+      'manyToOne',
+      'api::hospital.hospital'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -825,6 +830,7 @@ export interface ApiHospitalHospital extends Schema.CollectionType {
     singularName: 'hospital';
     pluralName: 'hospitals';
     displayName: 'Hospital';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -835,10 +841,10 @@ export interface ApiHospitalHospital extends Schema.CollectionType {
     image: Attribute.Media;
     Email: Attribute.Email;
     website: Attribute.String;
-    Phone: Attribute.Integer;
+    Phone: Attribute.BigInteger;
     categories: Attribute.Relation<
       'api::hospital.hospital',
-      'oneToOne',
+      'oneToMany',
       'api::category.category'
     >;
     Premium: Attribute.Boolean;
