@@ -38,17 +38,17 @@
     "Phone": {
       "type": "biginteger"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "hospital"
-    },
     "Premium": {
       "type": "boolean"
     },
     "Description": {
       "type": "richtext"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "hospitals"
     }
   }
 }
