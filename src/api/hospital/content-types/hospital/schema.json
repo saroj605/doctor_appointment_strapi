@@ -49,6 +49,12 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "hospitals"
+    },
+    "appointments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::appointment.appointment",
+      "mappedBy": "hospitals"
     }
   }
 }
